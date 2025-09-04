@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Montserrat } from 'next/font/google';
 
-const getOpenSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin"],
+import './globals.css';
+import { ReactQueryProvider } from '@/providers/ReactQueryProvider';
+
+const getMontserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Cupons",
-  description: "Teste Front End pleno Loyalme",
+  title: 'Cupons',
+  description: 'Teste Front End pleno Loyalme',
 };
 
 export default function RootLayout({
@@ -19,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${getOpenSans.variable} antialiased`}>{children}</body>
+      <body className={`${getMontserrat.variable} antialiased`}>
+        <ReactQueryProvider>{children}</ReactQueryProvider>
+      </body>
     </html>
   );
 }
