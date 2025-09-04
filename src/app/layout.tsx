@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${getOpenSans.variable}`}>{children}</body>
+    <html lang="pt-BR">
+      <body className={`${getOpenSans.variable} antialiased`}>{children}</body>
     </html>
   );
 }
